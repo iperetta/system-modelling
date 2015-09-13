@@ -1,4 +1,4 @@
-function solvePDE
+function solveLPDE
 % PROTOTYPE AS IT IS
 clc
 le = input('*[1]Load* or [2]Use matrices or [3]Enter w/ data ? ');
