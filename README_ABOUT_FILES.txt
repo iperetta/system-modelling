@@ -25,7 +25,12 @@ Programming application to be used as a CASM tool, is enough to just include
 *GenProg.h*. Note that classes *myfun*, *cAAST*, *cMatrix* and *cPRNGXS* could be 
 used independently for purposes other than the original ones.
 
-As examples, use following datasets:
+To compile the C++ code, download all related files, go to the proper folder
+and use the command:
+>> g++ -std=c++0x -o EXECNAME FILENAME.CPP -llapacke -lblas
+Note that LAPACK and BLAS must be installed in the host system.
+
+To run examples, use following datasets:
 
 ** To run GP, C++ examples:
 data1D_poissonelectro30pts.txt
@@ -43,8 +48,12 @@ data2D_concentration81pts.txt
 ./TGE/TGE_10439_data2D_concentration81pts.txt
 
 Usage (after compile and build of CASM_GP.cpp): 
-CASM_GP(.exe) {0:set_basic, 1:set_common} {namefile} {polynomial_degree} {max_diff_order} {mcint powerof2} {population} {maxgen}
+>> CASM_GP(.exe) {0:set_basic, 1:set_common} {namefile} {polynomial_degree} 
+   {max_diff_order} {mcint powerof2} {population} {maxgen}
 Example, linux: CASM_GP 0 data1D_underdamposcil30pts.txt 4 2 9 100 70
 Example, windows: CASM_GP.exe 0 data1D_underdamposcil30pts.txt 4 2 9 100 70
+
+Feel free to use any datasets available for you. Authors will appreciate
+if you please could share results and point out possible problems.
 
 (c)2015 - iperetta@ieee.org
