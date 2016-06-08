@@ -54,9 +54,8 @@ class cPRNGXS_1024 { // xorshift1024*
 		uint64_t s0 = s[ p ];
 		uint64_t s1 = s[ p = ( p + 1 ) & 15 ];
 		s1 ^= s1 << 31; // a
-		s1 ^= s1 >> 11; // b
-		s0 ^= s0 >> 30; // c
-		return ( s[ p ] = s0 ^ s1 ) * 1181783497276652981LL; 
+		s[ p ] = s1 ^ s0 ^ (s1 >> 11) ^ (s0 >> 30); // b,c
+		return s[ p ] * 1181783497276652981LL;
 	}
 	int integer(const int &a = 0, const int &b = 100)
 	{
